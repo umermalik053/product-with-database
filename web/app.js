@@ -1,5 +1,5 @@
 // const url = window.location.href;
-let baseUrl = "http://localhost:5001";
+let baseUrl = "https://better-pullover-tuna.cyclic.app/";
 
 // if (url.split(":")[0] === 'https') {
 //     baseUrl = 'https://ill-pink-gorilla-cuff.cyclic.app';
