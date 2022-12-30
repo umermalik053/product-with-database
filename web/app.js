@@ -50,25 +50,58 @@ let getAllProducts = () => {
                 document.querySelector("#productList").innerHTML +=
                     `
                     <div id='div-${eachProduct._id}'>
-                        <h1>${eachProduct.name} </h1>
+                       
+                        <div class="card" style="width: 200px; float:left;margin:5px; box-shadow: 5px 2px #888888; background-color: #aaa; height:550px;">
+                        <img src="./sample.png" class="card-img-top" alt="...">
+                       <hr> <div class="card-body">
+                        <u><h1>${eachProduct.name}</h1></u>
                         <p>${eachProduct.price} </p>
                         <p>${eachProduct.category} </p>
                         <p>${eachProduct.description} </p>
-                        <button onclick="deleteProduct('${eachProduct._id}')">delete </button>
-                        <button onclick="editProduct('${eachProduct._id}')">edit </button>
-                       
+                        <div>
+                        <button onclick="deleteProduct('${eachProduct._id}')" class="btn btn-danger"    style="width:100%; border-radius: 40%;float:left;"> Delete </button>
+                        <button onclick="editProduct('${eachProduct._id}')" class="btn btn-primary" style="width:100%; border-radius: 40%" >Edit </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                    
                     `
                     // document.querySelector("#result").innerHTML += response.data.message
-                    document.querySelector("#productList").innerHTML +=` <form  id='form-${eachProduct._id}' style="display:none; margin="100px" onsubmit="updateProduct('${eachProduct._id}'); return false">
-                    <br/>Name::<input type="text" size="30"id='name1' value='${eachProduct.name}' required  />
-                    <br/>Price::<input type="number" id='price2' value='${eachProduct.price}' required />
-                    <br/>Category::<input type="text" id='category3' value='${eachProduct.category}' required />
-                    <br/>Discription::<input type="text" id='description4' value='${eachProduct.description}'required  />
-                    <br/><button type="submit">Update</button>
-                    <br/></form>`
-            })
+                    document.querySelector("#productList").innerHTML +=` 
+                    <div class="card" style="width: 0px%; float:left;margin:5px; box-shadow: 5px 2px #888888; background-color: #aaa;">
+                    
+                  <div> <form  id='form-${eachProduct._id}' style="display:none; margin="100px" onsubmit="updateProduct('${eachProduct._id}'); return false">
+                   
+                   <u><p> <br/>Name::<input type="text" id='name1' value='${eachProduct.name}' required  /></p></u>
+                   
+                    <p> <br/>Price::<input type="number" id='price2' value='${eachProduct.price}' required />
+                   
+                   
+                    <p> <br/>Category::<input type="text" id='category3' value='${eachProduct.category}' required /></p>
+                    
+                  
+                    <p> <br/>Discription::<input type="text" id='description4' value='${eachProduct.description}'required  />
+                    </p>
+
+                    <div>
+                    <hr/><br/><button class="btn btn-success" type="submit" style="float:right">Update</button> </p>
+                  </div>
+                    
+                  </div>
+
+                  </div>
+                </div>
+
+
+
+
+                    
+
+                 
+              
+                    `
+           })
         })
         .catch(function (error) {
             // handle error
