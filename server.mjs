@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors'; 
 import path from 'path';
+import nodemon from 'nodemon';
 import mongoose from 'mongoose';
 
 
@@ -57,7 +58,9 @@ app.post("/product", (req,res) =>{
 })
 app.get('/products', (req, res) => {
 
-  productModel.find({}, (err, data) => {
+  productModel.find({})
+  .sort({ _id : -1 })
+  .exec((err, data) => {
       if (!err) {
           res.send({
               message: "this is all your product",
