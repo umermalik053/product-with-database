@@ -362,10 +362,11 @@ footer .bottom-details .bottom_text{
     
       <div>
         <h1 style="color: white;font-family:cursive; font-weight: bolder;font-style: italic;text-transform: uppercase;">All product</h1>
+        <!-- all product show this tag -->
         <div id="productList" class="productList" ></div>
     </div>
 
-
+<!-- footer start -->
 
     <footer>
       <div class="content">
@@ -389,7 +390,7 @@ footer .bottom-details .bottom_text{
      
    
 
-
+<!-- card design -->
 
 
     <!-- <div class="card" style="width: 18rem;">
@@ -402,7 +403,43 @@ footer .bottom-details .bottom_text{
 
 
     
-
+  <!-- javascript  -->
     <script src="./app.js"></script>
+
+<!-- service worker attach -->
+<script>
+
+  console.log("navigator.serviceWorker: ", navigator.serviceWorker);
+
+  if (typeof navigator.serviceWorker !== 'undefined') {
+
+      navigator.serviceWorker.register('sw.js').then((registration) => {
+          console.log('Service worker registration succeeded:', registration);
+      }, /*catch*/(error) => {
+          console.error(`Service worker registration failed: ${error}`);
+      });
+  }
+
+
+  // let deferredPrompt;
+  // window.addEventListener('beforeinstallprompt', function (e) {
+
+  //     // Prevent the mini-infobar from appearing on mobile
+  //     e.preventDefault();
+
+  //     // Stash the event so it can be triggered later.
+  //     deferredPrompt = e;
+  // });
+  // var buttonInstall = document.getElementById('install');
+
+  // buttonInstall.addEventListener('click', function (e) {
+  //     // Show the install prompt
+  //     deferredPrompt.prompt();
+  // });
+
+
+
+</script>
+
 </body>
 </html>
